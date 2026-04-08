@@ -143,6 +143,7 @@ try {
                 <motion.a
                   key={info.label}
                   href={info.href}
+                  target="_blank" 
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}

@@ -35,7 +35,7 @@ export default function HeroSection() {
             <div className="relative p-1 rounded-full bg-gradient-to-tr from-primary to-purple-500 shadow-glow">
               <div className="bg-background rounded-full p-1">
                 <img
-                  src="/api/placeholder/150/150" // Ganti dengan path foto kamu, misal: /profile.jpg
+                  src="/profile.jpg" // Ganti dengan path foto kamu, misal: /profile.jpg
                   alt="Profile"
                   className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-transparent"
                 />
@@ -125,7 +125,7 @@ export default function HeroSection() {
             className="flex items-center justify-center gap-6"
           >
             {[
-              { icon: Github, href: '#', label: 'GitHub' },
+              { icon: Github, href: 'https://github.com/achmadrifaldy88-byte/sipak-dong.git', label: 'GitHub' },
               // { icon: Linkedin, href: '#', label: 'LinkedIn' },
               // { icon: Youtube, href: '#', label: 'YouTube' },
               // { icon: Instagram, href: '#', label: 'Instagram' },
@@ -133,6 +133,7 @@ export default function HeroSection() {
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank" 
                 className="p-3 rounded-full glass hover:shadow-glow transition-all duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
