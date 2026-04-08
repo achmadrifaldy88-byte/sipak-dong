@@ -19,19 +19,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@developer.com',
-    href: 'mailto:hello@developer.com',
+    value: 'achmadrifaldy88@gmail.com',
+    href: 'mailto:achmadrifaldy88@gmail.com',
   },
   {
     icon: Phone,
     label: 'Telepon',
-    value: '+62 812 3456 7890',
-    href: 'tel:+6281234567890',
+    value: '+6282277093552',
+    href: 'tel:+6282277093552',
   },
   {
     icon: MapPin,
     label: 'Lokasi',
-    value: 'Jakarta, Indonesia',
+    value: 'Aceh, Indonesia',
     href: '#',
   },
 ];
@@ -73,29 +73,32 @@ export default function ContactSection() {
 
     setIsSubmitting(true);
 
-    try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData,
-      });
+try {
+  const { data, error } = await supabase.functions.invoke('send-contact-email', {
+    body: formData,
+  });
 
-      if (error) throw error;
+  if (error) throw error;
 
-      toast({
-        title: 'Pesan Terkirim! ✨',
-        description: 'Terima kasih telah menghubungi saya. Saya akan membalas secepatnya.',
-      });
+  toast({
+    title: 'Pesan Terkirim! ✨',
+    description: 'Terima kasih telah menghubungi saya. Saya akan membalas secepatnya.',
+  });
 
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error: any) {
-      console.error('Error sending email:', error);
-      toast({
-        title: 'Gagal Mengirim',
-        description: 'Terjadi kesalahan. Silakan coba lagi atau hubungi langsung via email.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+  setFormData({ name: '', email: '', subject: '', message: '' });
+
+} catch (error: any) {
+  console.error('Error sending email:', error);
+
+  toast({
+    title: 'Gagal Mengirim',
+    description: 'Terjadi kesalahan. Silakan coba lagi atau hubungi langsung via email.',
+    variant: 'destructive',
+  });
+
+} finally {
+  setIsSubmitting(false);
+}
   };
 
   return (
@@ -126,12 +129,12 @@ export default function ContactSection() {
           >
             <div>
               <h3 className="font-display text-2xl font-bold mb-4">
-                Mari Berkolaborasi!
+                Lets Collab!!
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 Punya project menarik atau ingin berkolaborasi? Jangan ragu untuk 
                 menghubungi saya. Saya selalu terbuka untuk diskusi tentang project 
-                baru, ide kreatif, atau kesempatan untuk menjadi bagian dari visi Anda.
+                baru, ide kreatif, atau kesempatan untuk menjadi bagian dari project anda.
               </p>
             </div>
 
