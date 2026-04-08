@@ -17,6 +17,41 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          
+          {/* --- BAGIAN FOTO PROFIL --- */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.8,
+              type: "spring",
+              stiffness: 100 
+            }}
+            className="mb-8 relative inline-block"
+          >
+            {/* Efek Glow di belakang foto */}
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
+            
+            <div className="relative p-1 rounded-full bg-gradient-to-tr from-primary to-purple-500 shadow-glow">
+              <div className="bg-background rounded-full p-1">
+                <img
+                  src="/api/placeholder/150/150" // Ganti dengan path foto kamu, misal: /profile.jpg
+                  alt="Profile"
+                  className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-transparent"
+                />
+              </div>
+            </div>
+            
+            {/* Badge Status (Opsional) */}
+            <motion.div 
+              className="absolute bottom-2 right-2 w-5 h-5 bg-green-500 border-4 border-background rounded-full"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1 }}
+            />
+          </motion.div>
+          {/* --------------------------- */}
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -28,7 +63,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Selamat datang di portfolio saya
+              👋 Welcome To My Portofolio
             </motion.span>
           </motion.div>
 
@@ -38,9 +73,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            Fullstack Developer
+            <span className="text-foreground">Hi I'm </span>
             <br />
-            <span className="text-gradient">&amp; Content Creator</span>
+            <span className="text-gradient">Achmad Rifaldy</span>
           </motion.h1>
 
           <motion.p
@@ -49,8 +84,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
           >
-            Saya membangun aplikasi web yang indah dan fungsional, 
-            serta membagikan pengetahuan melalui konten yang inspiratif.
+            Saya adalah seorang murid dari MAN 1 Banda Aceh yang
+            tertarik dengan pelajaran coding, izinkan saya mempersembahkan
+            portofolio saya. 
           </motion.p>
 
           <motion.div
@@ -90,9 +126,9 @@ export default function HeroSection() {
           >
             {[
               { icon: Github, href: '#', label: 'GitHub' },
-              { icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { icon: Youtube, href: '#', label: 'YouTube' },
-              { icon: Instagram, href: '#', label: 'Instagram' },
+              // { icon: Linkedin, href: '#', label: 'LinkedIn' },
+              // { icon: Youtube, href: '#', label: 'YouTube' },
+              // { icon: Instagram, href: '#', label: 'Instagram' },
             ].map((social) => (
               <motion.a
                 key={social.label}
